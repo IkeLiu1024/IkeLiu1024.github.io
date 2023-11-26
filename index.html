@@ -172,6 +172,173 @@
     
     
     <article
+  id="post-1125赛后总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/11/25/1125%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"
+    >1125赛后总结</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/25/1125%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2023-11-25T03:00:00.000Z" itemprop="datePublished">2023-11-25</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>介绍：此为每周比赛的赛后总结，总结有哪些不足。</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p><a target="_blank" rel="noopener" href="http://cplusoj.com/p/802?tid=656143d39c2e0cf632761cad"><strong>P802</strong> 两行代码</a></p>
+<p><a target="_blank" rel="noopener" href="http://cplusoj.com/p/788?tid=656143d39c2e0cf632761cad"><strong>P788</strong> 四元组</a></p>
+<p><a target="_blank" rel="noopener" href="http://cplusoj.com/p/770?tid=656143d39c2e0cf632761cad"><strong>P770</strong> crxis的字符串</a></p>
+<p><a target="_blank" rel="noopener" href="http://cplusoj.com/p/675?tid=656143d39c2e0cf632761cad"><strong>P675</strong> CRX的数组</a></p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>以下进行逐题分析。</p>
+<h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输入五个数，求有几个不同的数。</p>
+<p>签到题，太不小心了，桶排最后求答案时忘了从0开始了QAQ</p>
+<p><strong>以后要注意下标、变量名等低级问题</strong></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> ans,Max,t,cnt[<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t),cnt[t]++,Max=std::<span class="built_in">max</span>(Max,t);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=Max;i++)</span><br><span class="line">		<span class="keyword">if</span>(cnt[i])</span><br><span class="line">			ans++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>输入四个数 $n, p, q, r$，求是否有一个四元组 $(x,y,z,w)$，满足一些条件（太麻烦不打了，具体见题目）。</p>
+<p>数据范围：</p>
+<p>$3 ≤ N ≤ 2× 10^5$</p>
+<p>$1 ≤ Ai ≤ 10^9$</p>
+<p>$1 ≤ P,Q,R ≤ 10的15次方$</p>
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>这道题如果用暴力，绝对会超时，但总比不做好吧。我当时加了一个优化，后来又加了一个优化，结果分数更低了????????????</p>
+<p>51分代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 200005</span></span><br><span class="line"><span class="type">int</span> n,p,q,r,a[M],s[M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;n,&amp;p,&amp;q,&amp;r);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="comment">//前缀和优化</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),s[i]=s[i<span class="number">-1</span>]+a[i];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> x=<span class="number">0</span>;x&lt;=n;x++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> y=x+<span class="number">1</span>;y&lt;=n;y++)&#123;</span><br><span class="line">			<span class="type">int</span> P=s[y<span class="number">-1</span>]-s[x<span class="number">-1</span>];<span class="comment">//先算P，如果不成立，直接不进入下层循环</span></span><br><span class="line">			<span class="keyword">if</span>(P!=p)</span><br><span class="line">				<span class="keyword">continue</span>; </span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> z=y+<span class="number">1</span>;z&lt;=n;z++)&#123;</span><br><span class="line">				<span class="type">int</span> Q=s[z<span class="number">-1</span>]-s[y<span class="number">-1</span>];<span class="comment">//同样如果不成立，直接不进入下层循环</span></span><br><span class="line">				<span class="keyword">if</span>(Q!=q)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> w=z+<span class="number">1</span>;w&lt;=n;w++)&#123;</span><br><span class="line">					<span class="type">int</span> R=s[w<span class="number">-1</span>]-s[z<span class="number">-1</span>];</span><br><span class="line">					<span class="keyword">if</span>(R==r)&#123;</span><br><span class="line">						<span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">						<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="标程"><a href="#标程" class="headerlink" title="标程"></a>标程</h3><p>标程思路：使用三次前缀和，每次求出每个可以成立的区间，最终再求总的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 200005</span></span><br><span class="line"><span class="type">long</span> <span class="type">long</span> l=<span class="number">1</span>,sum,n,p,q,r,a[M],f[M],g[M],h[M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld%lld&quot;</span>,&amp;n,&amp;p,&amp;q,&amp;r);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		sum+=a[i];<span class="comment">//实时前缀和 </span></span><br><span class="line">		<span class="keyword">while</span>(sum&gt;p&amp;&amp;l&lt;i)<span class="comment">//有点类似滑动窗口，大了则弹出队头元素 </span></span><br><span class="line">			sum-=a[l++];</span><br><span class="line">		<span class="keyword">if</span>(sum==p)<span class="comment">//找出了一个p，记录从l开始，从i结束的区间有p </span></span><br><span class="line">			f[l]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	l=<span class="number">1</span>,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		sum+=a[i];<span class="comment">//实时前缀和 </span></span><br><span class="line">		<span class="keyword">while</span>(sum&gt;q&amp;&amp;l&lt;i)<span class="comment">//有点类似滑动窗口，大了则弹出队头元素 </span></span><br><span class="line">			sum-=a[l++];</span><br><span class="line">		<span class="keyword">if</span>(sum==q)<span class="comment">//找出了一个p，记录从l开始，从i结束的区间有p </span></span><br><span class="line">			g[l]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	l=<span class="number">1</span>,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		sum+=a[i];<span class="comment">//实时前缀和 </span></span><br><span class="line">		<span class="keyword">while</span>(sum&gt;r&amp;&amp;l&lt;i)<span class="comment">//有点类似滑动窗口，大了则弹出队头元素 </span></span><br><span class="line">			sum-=a[l++];</span><br><span class="line">		<span class="keyword">if</span>(sum==r)<span class="comment">//找出了一个p，记录从l开始，从i结束的区间有p </span></span><br><span class="line">			h[l]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(f[i] <span class="keyword">and</span> g[f[i]+<span class="number">1</span>] <span class="keyword">and</span> h[g[f[i]+<span class="number">1</span>]+<span class="number">1</span>])&#123;<span class="comment">//这个区间的终点的下一个元素就是下一个区间的起点</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h3><p>输入两个字符串 $S$ 和 $T$，每次操作可以在 $S$ 中两个相邻的<strong>相同</strong>字符间插入一个<strong>相同</strong>字符，问是否能通过若干次操作将 $S$ 变成 $T$。</p>
+<p>数据范围：$2≤lenS,lenT≤2×10^5$</p>
+<p>我的思路是 $BFS$ ，但是应该是 $MLE$ 了，但其实这道题只需要纯模拟。<strong>有时候不要想太复杂，多想不同的方法</strong>。</p>
+<h3 id="标程-1"><a href="#标程-1" class="headerlink" title="标程"></a>标程</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> poss,post;<span class="comment">//类似双指针，分别为两个字符串的下标</span></span><br><span class="line">string s,t;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;s&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(poss&lt;s.<span class="built_in">size</span>() <span class="keyword">or</span> post&lt;t.<span class="built_in">size</span>())&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[poss]==t[post])<span class="comment">//一样则继续搜 </span></span><br><span class="line">			poss++,post++;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">if</span>(t[post<span class="number">-1</span>]==t[post<span class="number">-2</span>])<span class="comment">//可以插入一个元素，即有两个相同的元素，则继续搜下一个</span></span><br><span class="line">				post++;</span><br><span class="line">			<span class="keyword">else</span>&#123;<span class="comment">//加不了，不行</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;No&quot;</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Yes&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>输入一个 $m$，要求生成一个元素个数不超过 $300$ 的数组，使小于等于 $m$ 的所有正整数都可以由数组中不多于 $3$ 个不同元素组成，每个元素大小不超过 $10^6$。</p>
+<p>数据范围：$1≤m≤1000000$</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>我一开始觉得是用 $2$ 的次方，最后发现这样即使合并也会不行，<del>然后就试着用随机数，删除多余的????</del>。</p>
+<p>正解：这到题就是真正的<strong>打表</strong>。</p>
+<p>过程： $m$ 最大可以拆解成 $\overline{abcdef}$ 。</p>
+<p>$\overline{ef}$ 为 $00$ 至 $99$. 以防万一，加到 $100$.</p>
+<p>$\overline{cd}$ 可表示为 $\overline{ef}×100$ ，为 $100$ 至 $10000$ ，每次加 $100$. 以防万一，加到 $10000$.</p>
+<p>$\overline{ab}$ 为可表示为 $\overline{ef}×10000$，为 $10000$ 至 $1000000$，每次加 $10000$. 加到 $1000000$.</p>
+<p>共刚好 $300$ 个数。</p>
+<h3 id="标程（没错，就这么简单）"><a href="#标程（没错，就这么简单）" class="headerlink" title="标程（没错，就这么简单）"></a>标程（没错，就这么简单）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> F(X,S,T,P) for(int X=S;X&lt;=T;X+=P)printf(<span class="string">&quot;%d &quot;</span>,X);</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;300\n&quot;</span>);</span><br><span class="line">	<span class="built_in">F</span>(i,<span class="number">1</span>,<span class="number">100</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">F</span>(i,<span class="number">100</span>,<span class="number">10000</span>,<span class="number">100</span>);</span><br><span class="line">	<span class="built_in">F</span>(i,<span class="number">10000</span>,<span class="number">1000000</span>,<span class="number">10000</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总结一下这次比赛。</p>
+<ol>
+<li>要注意细节，如变量名、数字、下标等；</li>
+<li>不要想太复杂，有时用简单的方法就可以了；</li>
+<li>还是要多刷题，见得多了自然就可以分辨这道题难不难了；</li>
+<li>也要多做“数学”题，增长见识。</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93-%E9%9B%86%E8%AE%AD-%E5%88%B7%E9%A2%98/" rel="tag">赛后总结, 集训, 刷题</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
+  id="post-单调队列"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/11/20/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/"
+    >单调队列有感</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/11/20/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="article-date">
+  <time datetime="2023-11-20T00:00:00.000Z" itemprop="datePublished">2023-11-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>最近做了一些滑动窗口的题目，进行了加强巩固。有了一些收获和注意事项。</p>
+<h2 id="模板及基本步骤"><a href="#模板及基本步骤" class="headerlink" title="模板及基本步骤"></a>模板及基本步骤</h2><p>首先模板是一定要记住的，其实并不难：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 1000005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,k;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[M],minn[M],maxn[M];</span><br><span class="line">deque&lt;<span class="type">int</span>&gt;q1,q2;<span class="comment">//q1存下标</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);<span class="comment">//新选手入队</span></span><br><span class="line">		<span class="comment">//维护单调递增获取最小值</span></span><br><span class="line">		<span class="keyword">while</span>(!q1.<span class="built_in">empty</span>()&amp;&amp;a[i]&lt;a[q1.<span class="built_in">back</span>()])</span><br><span class="line">			q1.<span class="built_in">pop_back</span>();</span><br><span class="line">		<span class="keyword">if</span>(!q1.<span class="built_in">empty</span>()&amp;&amp;i-q1.<span class="built_in">front</span>()&gt;=k)</span><br><span class="line">			q1.<span class="built_in">pop_front</span>();</span><br><span class="line">		q1.<span class="built_in">push_back</span>(i);</span><br><span class="line">		minn[i]=q1.<span class="built_in">front</span>();</span><br><span class="line">		<span class="comment">//维护单调递减获取最大值</span></span><br><span class="line">		<span class="keyword">while</span>(!q2.<span class="built_in">empty</span>()&amp;&amp;a[i]&gt;a[q2.<span class="built_in">back</span>()])</span><br><span class="line">			q2.<span class="built_in">pop_back</span>();</span><br><span class="line">		<span class="keyword">if</span>(!q2.<span class="built_in">empty</span>()&amp;&amp;i-q2.<span class="built_in">front</span>()&gt;=k)</span><br><span class="line">			q2.<span class="built_in">pop_front</span>();</span><br><span class="line">		q2.<span class="built_in">push_back</span>(i);</span><br><span class="line">		maxn[i]=q2.<span class="built_in">front</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=k;i&lt;=n;i++)<span class="comment">//从k开始才形成了窗口，输出最小值</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,a[minn[i]]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=k;i&lt;=n;i++)<span class="comment">//输出最大值</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,a[maxn[i]]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>别看代码长，其实就只分几步，记下步骤，随机应变就好：</p>
+<ol>
+<li>输入元素（若题目要预处理如前缀和等则需提前输入）；</li>
+<li>判断是否有元素滑出窗口，即超出了窗口大小。这里只需要用一个 <code>if</code> ，但为了保险我们使用 <code>while</code> ；</li>
+<li>维护单调递增&#x2F;减，只需记住最大&#x2F;最小值（即题目要求的）的<strong>下标</strong>始终在队首，而当前需要加入 <code>a[i]</code> ，导致不能单调递增&#x2F;减的元素下标弹出；</li>
+<li>此时压入当前元素的<strong>下标</strong>，并按题目要求执行求最大&#x2F;小值等操作。</li>
+</ol>
+<h2 id="特殊注意事项"><a href="#特殊注意事项" class="headerlink" title="特殊注意事项"></a>特殊注意事项</h2><p>根据我做了两道题的经验，一下还有几点需要注意。</p>
+<ol>
+<li><p>首先，注意顺序，如以下题目求的是最小花费&#x2F;最大收益，则需要在判断是否有元素滑出窗口之后，如果队列非空，则立马判断，否则压入元素后再判断会导致两个元素相减，造成算出 <code>0</code> 的后果。</p>
+</li>
+<li><p>有时需要在进入滑动窗口前先压入一个 <code>0</code> ，原因暂未知，可能模拟一下会知道，这一点需要随机应变，而用数组模拟队列时每次都会把开始设为 <code>0</code> 。</p>
+</li>
+</ol>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="01-C398-最大连续和"><a href="#01-C398-最大连续和" class="headerlink" title="01. C398. 最大连续和"></a>01. C398. 最大连续和</h3><h4 id="题目概述"><a href="#题目概述" class="headerlink" title="题目概述"></a>题目概述</h4><p>给定n个元素，要求取一段长度小于m的非空子序列，要求子序列中所有元素之和最大。</p>
+<h4 id="思路概述"><a href="#思路概述" class="headerlink" title="思路概述"></a>思路概述</h4><p>“长度为m”提醒了我们可以使用滑动窗口。“子序列”可以非连续。我们使用前缀和优化求和过程，使用单调队列维护单调递减序列来获取最大值，并用Max变量记录。</p>
+<h4 id="代码详解"><a href="#代码详解" class="headerlink" title="代码详解"></a>代码详解</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> M 200005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,m,Max=INT_MIN,a[M],sum[M];</span><br><span class="line">deque&lt;<span class="type">int</span>&gt;q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="comment">//前缀和优化 </span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">	q.<span class="built_in">push_back</span>(<span class="number">0</span>);<span class="comment">//【注意这道题如果不加这里会有两个点错误，可能是因为不加会导致第一个元素不被选取】</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;q.<span class="built_in">front</span>()&lt;i-m)<span class="comment">//窗口过大，滑出窗口 </span></span><br><span class="line">			q.<span class="built_in">pop_front</span>();</span><br><span class="line">		<span class="keyword">if</span>(!q.<span class="built_in">empty</span>())<span class="comment">//注意求最大值的位置</span></span><br><span class="line">			Max=std::<span class="built_in">max</span>(Max,sum[i]-sum[q.<span class="built_in">front</span>()]);</span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;sum[q.<span class="built_in">back</span>()]&gt;=sum[i])<span class="comment">//尾部元素比头部大 </span></span><br><span class="line">			q.<span class="built_in">pop_back</span>();</span><br><span class="line">		q.<span class="built_in">push_back</span>(i);<span class="comment">//最终压入元素</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,Max);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="02-C399-烽火传递"><a href="#02-C399-烽火传递" class="headerlink" title="02. C399. 烽火传递"></a>02. C399. 烽火传递</h3><h4 id="题目概述-1"><a href="#题目概述-1" class="headerlink" title="题目概述"></a>题目概述</h4><p><code>n</code> 个烽火台，每个烽火台点燃都有一定代价。要求每 <code>m</code> 个烽火台中，必须点燃一个，现在求最小代价。</p>
+<h4 id="思路概述-1"><a href="#思路概述-1" class="headerlink" title="思路概述"></a>思路概述</h4><p>“每 <code>m </code> 个”又提示了我们。结合了思想， <code>f[i]</code> 表示前 <code>i</code> 座烽火台满足题目条件，且点燃第 <code>i</code> 座烽火台所需花费的最小总代价。</p>
+<h4 id="代码详解-1"><a href="#代码详解-1" class="headerlink" title="代码详解"></a>代码详解</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,m,ans=INT_MAX,a[<span class="number">200005</span>],f[<span class="number">200005</span>];</span><br><span class="line">deque&lt;<span class="type">int</span>&gt;q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line"><span class="comment">//	q.push_front(0);//【这里又可以不需要】</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;i-q.<span class="built_in">front</span>()&gt;m)</span><br><span class="line">			q.<span class="built_in">pop_front</span>();</span><br><span class="line">		<span class="keyword">if</span>(!q.<span class="built_in">empty</span>())<span class="comment">//还是注意这里</span></span><br><span class="line">			f[i]=f[q.<span class="built_in">front</span>()]+a[i];<span class="comment">//点燃这座，前面点燃最小的，即队首为最小元素 </span></span><br><span class="line">		<span class="keyword">while</span>(!q.<span class="built_in">empty</span>()&amp;&amp;f[q.<span class="built_in">back</span>()]&gt;=f[i])</span><br><span class="line">			q.<span class="built_in">pop_back</span>();</span><br><span class="line">		q.<span class="built_in">push_back</span>(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=n-m+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		ans=<span class="built_in">min</span>(ans,f[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B7%E9%A2%98-%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">刷题, 单调队列, 滑动窗口</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-关于本站"
   class="article article-type-post"
   itemscope
